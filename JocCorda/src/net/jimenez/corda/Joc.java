@@ -17,6 +17,4 @@ public class Joc {
 		Participants.add(p);
 
 	}
-	
-	
 }
