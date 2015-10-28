@@ -28,8 +28,6 @@ public class App extends GraphicsProgram {
 		
 		int persones = totalParticipants(rnd);
 		
-		System.out.println("Hola");
-		
 		for (int i = 0; i < persones; i++) {
 
 			int maxFor = rnd.nextInt((MAX_FOR - MIN_FOR) + 1) + MIN_FOR;
