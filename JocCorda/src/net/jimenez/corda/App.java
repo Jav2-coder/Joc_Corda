@@ -56,10 +56,10 @@ public class App extends GraphicsProgram {
 
 			} else {
 				
-				String blinky = "2469740-blinky.png";
-				String inky = "2469741-inky.png";
-				String pinky = "2469744-pinky.png";
-				String clyde = "2469743-orange.png";
+				String blinky = "blinky.png";
+				String inky = "inky.png";
+				String pinky = "pinky.png";
+				String clyde = "clyde.png";
 				String [] ghosts = {blinky, inky, pinky, clyde};
 				
 				GImage img = new GImage(ghosts[RND.nextInt(4)]);
