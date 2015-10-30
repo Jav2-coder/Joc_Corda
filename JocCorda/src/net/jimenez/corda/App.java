@@ -48,8 +48,14 @@ public class App extends GraphicsProgram {
 
 			if (i < persones / 2) {
 
-				GImage img = new GImage("Pacman.png");
-				img.scale(0.13);
+				String blinky = "Blinky2.png";
+				String inky = "Inky2.png";
+				String pinky = "Pinky2.png";
+				String clyde = "Clyde2.png";
+				String [] ghosts = {blinky, inky, pinky, clyde};
+				
+				GImage img = new GImage(ghosts[RND.nextInt(4)]);
+				img.scale(0.35);
 				add(img);
 
 				EquipA.add(crearParticipant(img));
@@ -63,7 +69,7 @@ public class App extends GraphicsProgram {
 				String [] ghosts = {blinky, inky, pinky, clyde};
 				
 				GImage img = new GImage(ghosts[RND.nextInt(4)]);
-				img.scale(0.25);
+				img.scale(0.35);
 				add(img);
 
 				EquipB.add(crearParticipant(img));
