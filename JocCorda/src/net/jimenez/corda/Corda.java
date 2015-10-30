@@ -16,7 +16,7 @@ public class Corda {
 	/**
 	 * Constructor principal de Corda, on donem com a atributs l'objecte GRect.
 	 * 
-	 * @param c Paràmetre que conte l'objecte GRect.
+	 * @param c Parametre que conte l'objecte GRect.
 	 */
 	public Corda(GRect c) {
 

@@ -2,12 +2,26 @@ package net.jimenez.corda;
 
 import java.util.List;
 
+/**
+ * 
+ * @author Surrui
+ *
+ */
 public class Joc {
 
 	List<Participant> EquipA;
 	List<Participant> EquipB;
 	Corda corda;
 
+	/**
+	 * Contructor principal de l'objecte Joc. L'hi passem per parametre
+	 * l'objecte Corda i els objectes List EquipA i EquipB. Tambe crida el
+	 * metode posicionament.
+	 * 
+	 * @param c Parametre que conte l'objecte Corda
+	 * @param A Parametre que conte el List EquipA
+	 * @param B Parametre que conte el List EquipB
+	 */
 	public Joc(Corda c, List<Participant> A, List<Participant> B) {
 		corda = c;
 		EquipA = A;
@@ -15,6 +29,9 @@ public class Joc {
 		posicionament();
 	}
 
+	/**
+	 * Metode encarregat de donar posicions als objectes Participant.
+	 */
 	private void posicionament() {
 
 		int posA = corda.getPosX();
@@ -33,6 +50,10 @@ public class Joc {
 		}
 	}
 
+	/**
+	 * Metode que s'encarrega de moure els objectes per el Canvas depenen de la
+	 * força total que fan els objectes Participant de cada List.
+	 */
 	public void estirarCorda() {
 
 		int posY = corda.getPosY() - EquipA.get(0).heightImg();
@@ -50,7 +71,7 @@ public class Joc {
 
 				EquipA.get(i).setPos(EquipA.get(i).getPosX() - mov, posY);
 				EquipB.get(i).setPos(EquipB.get(i).getPosX() - mov, posY);
-				
+
 			}
 			corda.setPosition(corda.getPosX() - mov, corda.getPosY());
 
@@ -62,7 +83,7 @@ public class Joc {
 
 				EquipA.get(i).setPos(EquipA.get(i).getPosX() + mov, posY);
 				EquipB.get(i).setPos(EquipB.get(i).getPosX() + mov, posY);
-				
+
 			}
 			corda.setPosition(corda.getPosX() + mov, corda.getPosY());
 		}
