@@ -34,16 +34,22 @@ public class App extends GraphicsProgram {
 
 			if (i < persones / 2) {
 
-				GImage img = new GImage("pawn-147060_1280.png");
-				img.scale(0.05);
+				GImage img = new GImage("Pacman.png");
+				img.scale(0.13);
 				add(img);
 
 				EquipA.add(crearParticipant(img));
 
 			} else {
-
-				GImage img = new GImage("pawn-147060_1280.png");
-				img.scale(0.05);
+				
+				String blinky = "2469740-blinky.png";
+				String inky = "2469741-inky.png";
+				String pinky = "2469744-pinky.png";
+				String clyde = "2469743-orange.png";
+				String [] ghosts = {blinky, inky, pinky, clyde};
+				
+				GImage img = new GImage(ghosts[RND.nextInt(4)]);
+				img.scale(0.25);
 				add(img);
 
 				EquipB.add(crearParticipant(img));

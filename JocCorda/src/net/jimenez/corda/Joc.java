@@ -19,7 +19,7 @@ public class Joc {
 
 		int posA = corda.getPosX();
 		int posB = corda.getPosX() + corda.getWidth();
-		int posY = corda.getPosY() - EquipA.get(0).heightImg();
+		int posY = corda.getPosY() - EquipB.get(0).heightImg();
 
 		for (int i = 0; i < EquipA.size(); i++) {
 
