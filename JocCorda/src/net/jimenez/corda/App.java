@@ -12,9 +12,10 @@ public class App extends GraphicsProgram {
 
 	private static final int MIN_PER = 6;
 	private static final int MAX_PER = 12;
-	private static final int MIN_FOR = 5;
+	private static final int MIN_FOR = 8;
 	private static final int MAX_FOR = 10;
-	List<Participant> Participants = new ArrayList<Participant>();
+	List<Participant> EquipA = new ArrayList<Participant>();
+	List<Participant> EquipB = new ArrayList<Participant>();
 
 	private static Random RND = new Random();
 
@@ -27,29 +28,36 @@ public class App extends GraphicsProgram {
 		Corda c = new Corda(r);
 		add(r);
 
-		Joc j = new Joc(c);
-
 		int persones = totalParticipants();
-
-		System.out.println(persones);
 
 		for (int i = 0; i < persones; i++) {
 
-			GImage img = new GImage("pawn-147060_1280.png");
-			img.scale(0.05);
-			add(img);
+			if (i < persones / 2) {
 
-			Participants.add(crearParticipant(img));
+				GImage img = new GImage("pawn-147060_1280.png");
+				img.scale(0.05);
+				add(img);
 
+				EquipA.add(crearParticipant(img));
+
+			} else {
+
+				GImage img = new GImage("pawn-147060_1280.png");
+				img.scale(0.05);
+				add(img);
+
+				EquipB.add(crearParticipant(img));
+
+			}
 		}
 
-		j.crearEquip(Participants);
+		Joc j = new Joc(c, EquipA, EquipB);
 
 		while (c.getPosX() < 640 && (c.getPosX() + c.getWidth()) > 640) {
-			
+
 			j.estirarCorda();
 			pause(230);
-			
+
 		}
 	}
 

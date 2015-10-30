@@ -1,33 +1,17 @@
 package net.jimenez.corda;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Joc {
 
-	List<Participant> EquipA = new ArrayList<Participant>();
-	List<Participant> EquipB = new ArrayList<Participant>();
+	List<Participant> EquipA;
+	List<Participant> EquipB;
 	Corda corda;
 
-	public Joc(Corda c) {
+	public Joc(Corda c, List<Participant> A, List<Participant> B) {
 		corda = c;
-	}
-
-	public void crearEquip(List<Participant> Participants) {
-
-		for (int i = 0; i < Participants.size(); i++) {
-
-			if (i < Participants.size() / 2) {
-
-				EquipA.add(Participants.get(i));
-
-			} else {
-
-				EquipB.add(Participants.get(i));
-
-			}
-		}
-
+		EquipA = A;
+		EquipB = B;
 		posicionament();
 	}
 
