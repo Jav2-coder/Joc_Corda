@@ -12,4 +12,18 @@ public class Equip {
 		
 	}
 	
+	public int totalFue(){
+		
+		int Fue = 0;
+		
+		for(int i = 0; i < Equip.size(); i++){
+			
+			Fue = Fue + Equip.get(i).getFue();
+			
+		}
+		
+		return Fue;
+		
+	}
+	
 }

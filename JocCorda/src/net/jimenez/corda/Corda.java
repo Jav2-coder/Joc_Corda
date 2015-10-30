@@ -6,28 +6,33 @@ import acm.graphics.GRect;
 
 public class Corda {
 
-	int posX;
-	int posY;
-	int w;
-	int h;
+	GRect r;	
+	
+	public Corda(GRect c) {
 
-	public Corda(int x, int y, int width, int height) {
-
-		posX = x;
-		posY = y;
-		w = width;
-		h = height;
+		r = c;
+		r.setFilled(true);
+		r.setFillColor(Color.YELLOW);
 
 	}
 
-	public GRect crearCorda() {
-
-		GRect r = new GRect(w, h);
-		r.setFilled(true);
-		r.setFillColor(Color.YELLOW);
-		r.setLocation(posX, posY);
-		return r;
-
+		
+	public void setPosition(int x, int y){
+				
+		r.setLocation(x, y);
+		
+	}
+	
+	public int getPosX(){
+		return (int) r.getX();
+	}
+	
+	public int getPosY(){
+		return (int) r.getY();
+	}
+	
+	public int getWidth(){
+		return (int) r.getWidth();
 	}
 
 }
