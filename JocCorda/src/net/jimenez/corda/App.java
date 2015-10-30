@@ -8,6 +8,11 @@ import acm.graphics.GImage;
 import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 
+/**
+ * 
+ * @author alumne1daw
+ *
+ */
 public class App extends GraphicsProgram {
 
 	private static final int MIN_PER = 6;
@@ -21,13 +26,22 @@ public class App extends GraphicsProgram {
 
 	private static final long serialVersionUID = 4179378993475675411L;
 
+	public void init() {
+
+		setSize(1280, 720);
+		GRect linia = new GRect(1, getHeight());
+		linia.setLocation((getWidth() / 2), 0);
+		add(linia);
+
+	}
+	
 	public void run() {
 
 		GRect r = new GRect(300, 10);
 		r.setLocation(490, 350);
 		Corda c = new Corda(r);
 		add(r);
-
+		
 		int persones = totalParticipants();
 
 		for (int i = 0; i < persones; i++) {
@@ -59,21 +73,12 @@ public class App extends GraphicsProgram {
 
 		Joc j = new Joc(c, EquipA, EquipB);
 
-		while (c.getPosX() < 640 && (c.getPosX() + c.getWidth()) > 640) {
+		while (c.getPosX() < (getWidth() / 2) && (c.getPosX() + c.getWidth()) > (getWidth() / 2)) {
 
 			j.estirarCorda();
 			pause(230);
 
 		}
-	}
-
-	public void init() {
-
-		setSize(1280, 720);
-		GRect linia = new GRect(1, 720);
-		linia.setLocation(640, 0);
-		add(linia);
-
 	}
 
 	private Participant crearParticipant(GImage img) {
