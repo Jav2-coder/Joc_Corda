@@ -44,7 +44,7 @@ public class App extends GraphicsProgram {
 	public void run() {
 
 		GRect r = new GRect(300, 10);
-		r.setLocation(((getWidth() / 2) - (r.getWidth() / 2)), (getHeight() / 2) - r.getHeight());
+		r.setLocation(((getWidth()/2) - (r.getWidth()/2)), (getHeight()/2) - r.getHeight());
 		Corda c = new Corda(r);
 		add(r);
 
