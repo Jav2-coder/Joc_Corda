@@ -31,7 +31,7 @@ public class App extends GraphicsProgram {
 	 */
 	public void init() {
 
-		setSize(1800, 720);
+		setSize(1280, 720);
 		GRect linia = new GRect(1, getHeight());
 		linia.setLocation((getWidth() / 2), 0);
 		add(linia);
@@ -91,6 +91,20 @@ public class App extends GraphicsProgram {
 			j.estirarCorda();
 			pause(230);
 
+		}
+		
+		if (c.getPosX() >= getWidth() / 2) {
+			
+			GImage B = new GImage("equipB.png");
+			B.setLocation(((getWidth()/2) - (B.getWidth()/2)), 0);
+			add(B);
+			
+		} else if (c.getPosX() <= (getWidth() / 2) - c.getWidth()) {
+			
+			GImage A = new GImage("equipA.png");
+			A.setLocation(((getWidth()/2) - (A.getWidth()/2)), 0);
+			add(A);
+			
 		}
 	}
 
