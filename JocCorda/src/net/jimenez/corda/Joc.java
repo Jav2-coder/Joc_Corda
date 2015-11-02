@@ -56,36 +56,15 @@ public class Joc {
 	 */
 	public void estirarCorda() {
 
-		int posY = corda.getPosY() - EquipA.get(0).heightImg();
-		Equip A = new Equip(EquipA);
-		Equip B = new Equip(EquipB);
+		Equip A = new Equip(EquipA, corda);
+		Equip B = new Equip(EquipB, corda);
 
 		int fuerEquipA = A.totalFue();
 		int fuerEquipB = B.totalFue();
 
-		if (fuerEquipA > fuerEquipB) {
-
-			int mov = fuerEquipA - fuerEquipB;
-
-			for (int i = 0; i < EquipA.size(); i++) {
-
-				EquipA.get(i).setPos(EquipA.get(i).getPosX() - mov, posY);
-				EquipB.get(i).setPos(EquipB.get(i).getPosX() - mov, posY);
-
-			}
-			corda.setPosition(corda.getPosX() - mov, corda.getPosY());
-
-		} else {
-
-			int mov = fuerEquipB - fuerEquipA;
-
-			for (int i = 0; i < EquipA.size(); i++) {
-
-				EquipA.get(i).setPos(EquipA.get(i).getPosX() + mov, posY);
-				EquipB.get(i).setPos(EquipB.get(i).getPosX() + mov, posY);
-
-			}
-			corda.setPosition(corda.getPosX() + mov, corda.getPosY());
-		}
+		A.moureEquip(fuerEquipA, fuerEquipB);
+		B.moureEquip(fuerEquipA, fuerEquipB);
+		corda.setPosition(corda.getPosX() + (fuerEquipA - fuerEquipB), corda.getPosY());
+		
 	}
 }

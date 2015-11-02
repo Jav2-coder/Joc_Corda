@@ -10,6 +10,7 @@ import java.util.List;
 public class Equip {
 
 	List<Participant> Equip;
+	Corda c;
 
 	/**
 	 * Constructor principal de l'objecte Equip, on passem un List com a
@@ -17,9 +18,10 @@ public class Equip {
 	 * 
 	 * @param E List que conte la meitat dels objectes "Participant" totals.
 	 */
-	public Equip(List<Participant> E) {
+	public Equip(List<Participant> E, Corda corda) {
 
 		Equip = E;
+		c = corda;
 
 	}
 
@@ -38,8 +40,19 @@ public class Equip {
 			Fue = Fue + Equip.get(i).getFue();
 
 		}
-
 		return Fue;
-
+	}
+	
+	public void moureEquip(int a, int b) {
+		
+		int posY = c.getPosY() - Equip.get(0).heightImg();
+		
+		int mov = a - b;
+		
+		for(int i = 0; i < Equip.size(); i++) {
+			
+			Equip.get(i).setPos(Equip.get(i).getPosX() + mov, posY);
+			
+		}
 	}
 }
